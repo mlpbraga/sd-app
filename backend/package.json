@@ -22,7 +22,7 @@
     "json-server": "0.15.0",
     "md5": "2.2.1",
     "moment-timezone": "0.5.26",
-    "mongoose": "5.6.0",
+    "mongoose": "5.7.5",
     "nodemon": "1.18.11",
     "uuid": "3.3.2"
   },
