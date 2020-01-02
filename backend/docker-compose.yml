@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  node:
+    container_name: sd-api
+    image: image/sd-api
+    build:
+        context: .
+        dockerfile: Dockerfile
+    volumes:
+      - .:/sd-api
+    ports:
+      - 4513:4513
+    command: nodemon .
+    depends_on:
+      - mongo
+    networks:
+      - backend
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data/:/data/db
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
